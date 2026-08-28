@@ -1,35 +1,60 @@
-function List({ pessoas }) {
+function List({ filmes }) {
     return (
         <main className="lista">
-            <h2>Cadastros</h2>
 
-            {pessoas.length === 0 ? (
+            <h2>Filmes cadastrados</h2>
+
+            {filmes.length === 0 ? (
                 <p className="vazio">
-                    Nenhum cadastro realizado.
+                    Nenhum filme cadastrado.
                 </p>
             ) : (
-                pessoas.map((pessoa, index) => (
-                    <div className="card" key={index}>
-                        <h3>{pessoa.nome}</h3>
 
-                        <p>
-                            <strong>Email:</strong> {pessoa.email}
-                        </p>
+                <div className="filmes">
 
-                        <p>
-                            <strong>Curso:</strong> {pessoa.curso}
-                        </p>
+                    {filmes.map((filme, index) => (
 
-                        <p>
-                            <strong>Idade:</strong> {pessoa.idade}
-                        </p>
+                        <div className="card" key={index}>
 
-                        <p>
-                            <strong>Cidade:</strong> {pessoa.cidade}
-                        </p>
-                    </div>
-                ))
+                            <img
+                                className="capaFilme"
+                                src={filme.capa}
+                                alt={`Capa do filme ${filme.titulo}`}
+                            />
+
+                            <div className="informacoesFilme">
+
+                                <h3>🎬 {filme.titulo}</h3>
+
+                                <p>
+                                    <strong>Diretor:</strong>{" "}
+                                    {filme.diretor}
+                                </p>
+
+                                <p>
+                                    <strong>Gênero:</strong>{" "}
+                                    {filme.genero}
+                                </p>
+
+                                <p>
+                                    <strong>Ano:</strong>{" "}
+                                    {filme.ano}
+                                </p>
+
+                                <p>
+                                    <strong>Duração:</strong>{" "}
+                                    {filme.duracao} minutos
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    ))}
+
+                </div>
             )}
+
         </main>
     );
 }

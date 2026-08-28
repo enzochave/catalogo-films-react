@@ -6,10 +6,8 @@ import List from "./components/List";
 import Add from "./components/Add";
 
 function App() {
-
     const [telaCadastro, setTelaCadastro] = useState(false);
-
-    const [pessoas, setPessoas] = useState([]);
+    const [filmes, setFilmes] = useState([]);
 
     function abrirCadastro() {
         setTelaCadastro(true);
@@ -19,32 +17,25 @@ function App() {
         setTelaCadastro(false);
     }
 
-    function cadastrarPessoa(pessoa) {
-        setPessoas([...pessoas, pessoa]);
-
+    function cadastrarFilme(filme) {
+        setFilmes([...filmes, filme]);
         setTelaCadastro(false);
     }
 
     return (
         <div className="app">
-
             {telaCadastro ? (
                 <Add
-                    onCadastrar={cadastrarPessoa}
+                    onCadastrar={cadastrarFilme}
                     onVoltar={voltarLista}
                 />
             ) : (
                 <>
-                    <Header
-                        onAdicionar={abrirCadastro}
-                    />
+                    <Header onAdicionar={abrirCadastro} />
 
-                    <List
-                        pessoas={pessoas}
-                    />
+                    <List filmes={filmes} />
                 </>
             )}
-
         </div>
     );
 }

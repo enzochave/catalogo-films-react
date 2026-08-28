@@ -1,9 +1,12 @@
 function Header({ onAdicionar }) {
     return (
         <header className="header">
-            <h1>Cadastro</h1>
+            <h1>🎬 Cadastro de Filmes</h1>
 
-            <button className="botaoAdicionar" onClick={onAdicionar}>
+            <button
+                className="botaoAdicionar"
+                onClick={onAdicionar}
+            >
                 +
             </button>
         </header>

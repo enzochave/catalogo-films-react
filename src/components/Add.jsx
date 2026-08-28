@@ -2,35 +2,38 @@ import { useState } from "react";
 
 function Add({ onCadastrar, onVoltar }) {
 
-    const [nome, setNome] = useState("");
-    const [email, setEmail] = useState("");
-    const [curso, setCurso] = useState("");
-    const [idade, setIdade] = useState("");
-    const [cidade, setCidade] = useState("");
+    const [titulo, setTitulo] = useState("");
+    const [diretor, setDiretor] = useState("");
+    const [genero, setGenero] = useState("");
+    const [ano, setAno] = useState("");
+    const [duracao, setDuracao] = useState("");
+    const [capa, setCapa] = useState("");
 
     function cadastrar(e) {
         e.preventDefault();
 
-        if (!nome || !email || !curso || !idade || !cidade) {
+        if (!titulo || !diretor || !genero || !ano || !duracao || !capa) {
             alert("Preencha todos os campos!");
             return;
         }
 
-        const pessoa = {
-            nome,
-            email,
-            curso,
-            idade,
-            cidade
+        const filme = {
+            titulo,
+            diretor,
+            genero,
+            ano,
+            duracao,
+            capa
         };
 
-        onCadastrar(pessoa);
+        onCadastrar(filme);
 
-        setNome("");
-        setEmail("");
-        setCurso("");
-        setIdade("");
-        setCidade("");
+        setTitulo("");
+        setDiretor("");
+        setGenero("");
+        setAno("");
+        setDuracao("");
+        setCapa("");
     }
 
     return (
@@ -44,59 +47,85 @@ function Add({ onCadastrar, onVoltar }) {
                     ←
                 </button>
 
-                <h2>Cadastrar</h2>
+                <h2>Cadastrar filme</h2>
             </div>
 
             <form onSubmit={cadastrar}>
 
-                <label>Nome</label>
+                <label>Título do filme</label>
+
                 <input
                     type="text"
-                    placeholder="Digite seu nome"
-                    value={nome}
-                    onChange={(e) => setNome(e.target.value)}
+                    placeholder="Ex: Homem-Aranha"
+                    value={titulo}
+                    onChange={(e) => setTitulo(e.target.value)}
                 />
 
-                <label>Email</label>
-                <input
-                    type="email"
-                    placeholder="Digite seu email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                />
+                <label>Diretor</label>
 
-                <label>Curso</label>
                 <input
                     type="text"
-                    placeholder="Digite seu curso"
-                    value={curso}
-                    onChange={(e) => setCurso(e.target.value)}
+                    placeholder="Nome do diretor"
+                    value={diretor}
+                    onChange={(e) => setDiretor(e.target.value)}
                 />
 
-                <label>Idade</label>
+                <label>Gênero</label>
+
+                <input
+                    type="text"
+                    placeholder="Ex: Ação"
+                    value={genero}
+                    onChange={(e) => setGenero(e.target.value)}
+                />
+
+                <label>Ano de lançamento</label>
+
                 <input
                     type="number"
-                    placeholder="Digite sua idade"
-                    value={idade}
-                    onChange={(e) => setIdade(e.target.value)}
+                    placeholder="Ex: 2025"
+                    value={ano}
+                    onChange={(e) => setAno(e.target.value)}
                 />
 
-                <label>Cidade</label>
+                <label>Duração</label>
+
                 <input
-                    type="text"
-                    placeholder="Digite sua cidade"
-                    value={cidade}
-                    onChange={(e) => setCidade(e.target.value)}
+                    type="number"
+                    placeholder="Ex: 120"
+                    value={duracao}
+                    onChange={(e) => setDuracao(e.target.value)}
                 />
+
+                <label>URL da capa</label>
+
+                <input
+                    type="url"
+                    placeholder="https://exemplo.com/capa.jpg"
+                    value={capa}
+                    onChange={(e) => setCapa(e.target.value)}
+                />
+
+                {capa && (
+                    <div className="previewCapa">
+                        <p>Prévia da capa:</p>
+
+                        <img
+                            src={capa}
+                            alt="Prévia da capa"
+                        />
+                    </div>
+                )}
 
                 <button
                     type="submit"
                     className="botaoCadastrar"
                 >
-                    Cadastrar
+                    Cadastrar filme
                 </button>
 
             </form>
+
         </main>
     );
 }

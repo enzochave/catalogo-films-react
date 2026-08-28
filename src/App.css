@@ -10,21 +10,24 @@ body {
 
 .app {
     min-height: 100vh;
-    max-width: 800px;
+    max-width: 900px;
     margin: 0 auto;
     background: white;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.08);
 }
 
-/* HEADER */
+/* =========================
+   HEADER
+========================= */
 
 .header {
-    height: 80px;
+    min-height: 80px;
+
     display: flex;
     align-items: center;
     justify-content: space-between;
 
-    padding: 0 25px;
+    padding: 15px 25px;
 
     background: #20232a;
     color: white;
@@ -46,6 +49,8 @@ body {
     color: #20232a;
 
     font-size: 30px;
+    line-height: 30px;
+
     cursor: pointer;
 
     transition: 0.2s;
@@ -55,7 +60,9 @@ body {
     transform: scale(1.08);
 }
 
-/* LISTA */
+/* =========================
+   LISTA
+========================= */
 
 .lista {
     padding: 30px;
@@ -64,50 +71,99 @@ body {
 .lista h2 {
     margin-top: 0;
     color: #20232a;
+    font-size: 26px;
+}
+
+.vazio {
+    text-align: center;
+
+    padding: 60px 20px;
+
+    color: #777;
+
+    font-size: 18px;
+}
+
+/* =========================
+   CARDS DOS FILMES
+========================= */
+
+.filmes {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
 .card {
+    display: flex;
+
+    gap: 20px;
+
     padding: 20px;
-    margin-bottom: 15px;
 
     border: 1px solid #ddd;
-    border-radius: 12px;
+    border-radius: 14px;
 
     background: #fafafa;
+
+    overflow: hidden;
 
     transition: 0.2s;
 }
 
 .card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    transform: translateY(-3px);
+
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
 
-.card h3 {
+.capaFilme {
+    width: 130px;
+    height: 190px;
+
+    object-fit: cover;
+
+    border-radius: 10px;
+
+    flex-shrink: 0;
+}
+
+.informacoesFilme {
+    flex: 1;
+}
+
+.informacoesFilme h3 {
     margin-top: 0;
+    margin-bottom: 20px;
+
+    font-size: 23px;
+
     color: #20232a;
 }
 
-.card p {
-    margin: 7px 0;
+.informacoesFilme p {
+    margin: 10px 0;
+
     color: #555;
+
+    font-size: 16px;
 }
 
-.vazio {
-    text-align: center;
-    padding: 50px 20px;
-    color: #777;
-}
-
-/* CADASTRO */
+/* =========================
+   CADASTRO
+========================= */
 
 .cadastro {
+    min-height: 100vh;
+
     padding: 30px;
 }
 
 .cadastroHeader {
     display: flex;
+
     align-items: center;
+
     gap: 15px;
 
     margin-bottom: 25px;
@@ -115,61 +171,120 @@ body {
 
 .cadastroHeader h2 {
     margin: 0;
+
+    color: #20232a;
+
+    font-size: 26px;
 }
 
 .botaoVoltar {
-    width: 40px;
-    height: 40px;
+    width: 42px;
+    height: 42px;
 
     border: none;
+
     border-radius: 8px;
 
     background: #20232a;
     color: white;
 
     font-size: 22px;
+
     cursor: pointer;
+
+    transition: 0.2s;
 }
+
+.botaoVoltar:hover {
+    transform: scale(1.05);
+}
+
+/* =========================
+   FORMULÁRIO
+========================= */
 
 .cadastro form {
     display: flex;
+
     flex-direction: column;
 }
 
 .cadastro label {
-    margin-bottom: 6px;
     margin-top: 15px;
 
+    margin-bottom: 7px;
+
     font-weight: bold;
+
+    color: #333;
 }
 
 .cadastro input {
-    padding: 13px;
+    width: 100%;
+
+    padding: 14px;
 
     border: 1px solid #ccc;
+
     border-radius: 8px;
 
     font-size: 16px;
 
     outline: none;
+
+    transition: 0.2s;
 }
 
 .cadastro input:focus {
     border-color: #20232a;
+
+    box-shadow: 0 0 0 2px rgba(32, 35, 42, 0.1);
 }
+
+/* =========================
+   PREVIEW DA CAPA
+========================= */
+
+.previewCapa {
+    margin-top: 20px;
+}
+
+.previewCapa p {
+    margin-bottom: 10px;
+
+    font-weight: bold;
+}
+
+.previewCapa img {
+    width: 130px;
+    height: 190px;
+
+    object-fit: cover;
+
+    display: block;
+
+    border-radius: 10px;
+}
+
+/* =========================
+   BOTÃO CADASTRAR
+========================= */
 
 .botaoCadastrar {
     margin-top: 25px;
 
-    padding: 14px;
+    padding: 15px;
 
     border: none;
+
     border-radius: 8px;
 
     background: #20232a;
+
     color: white;
 
     font-size: 16px;
+
     font-weight: bold;
 
     cursor: pointer;
@@ -179,4 +294,49 @@ body {
 
 .botaoCadastrar:hover {
     background: #343942;
+
+    transform: translateY(-1px);
+}
+
+/* =========================
+   CELULAR
+========================= */
+
+@media (max-width: 600px) {
+
+    .header {
+        padding: 15px;
+    }
+
+    .header h1 {
+        font-size: 21px;
+    }
+
+    .lista {
+        padding: 20px;
+    }
+
+    .cadastro {
+        padding: 20px;
+    }
+
+    .card {
+        gap: 15px;
+        padding: 15px;
+    }
+
+    .capaFilme {
+        width: 100px;
+        height: 150px;
+    }
+
+    .informacoesFilme h3 {
+        font-size: 18px;
+        margin-bottom: 12px;
+    }
+
+    .informacoesFilme p {
+        font-size: 14px;
+        margin: 7px 0;
+    }
 }
