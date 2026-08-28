@@ -1,0 +1,182 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f2f4f7;
+}
+
+.app {
+    min-height: 100vh;
+    max-width: 800px;
+    margin: 0 auto;
+    background: white;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.08);
+}
+
+/* HEADER */
+
+.header {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 25px;
+
+    background: #20232a;
+    color: white;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 28px;
+}
+
+.botaoAdicionar {
+    width: 45px;
+    height: 45px;
+
+    border: none;
+    border-radius: 10px;
+
+    background: white;
+    color: #20232a;
+
+    font-size: 30px;
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.botaoAdicionar:hover {
+    transform: scale(1.08);
+}
+
+/* LISTA */
+
+.lista {
+    padding: 30px;
+}
+
+.lista h2 {
+    margin-top: 0;
+    color: #20232a;
+}
+
+.card {
+    padding: 20px;
+    margin-bottom: 15px;
+
+    border: 1px solid #ddd;
+    border-radius: 12px;
+
+    background: #fafafa;
+
+    transition: 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.card h3 {
+    margin-top: 0;
+    color: #20232a;
+}
+
+.card p {
+    margin: 7px 0;
+    color: #555;
+}
+
+.vazio {
+    text-align: center;
+    padding: 50px 20px;
+    color: #777;
+}
+
+/* CADASTRO */
+
+.cadastro {
+    padding: 30px;
+}
+
+.cadastroHeader {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    margin-bottom: 25px;
+}
+
+.cadastroHeader h2 {
+    margin: 0;
+}
+
+.botaoVoltar {
+    width: 40px;
+    height: 40px;
+
+    border: none;
+    border-radius: 8px;
+
+    background: #20232a;
+    color: white;
+
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.cadastro form {
+    display: flex;
+    flex-direction: column;
+}
+
+.cadastro label {
+    margin-bottom: 6px;
+    margin-top: 15px;
+
+    font-weight: bold;
+}
+
+.cadastro input {
+    padding: 13px;
+
+    border: 1px solid #ccc;
+    border-radius: 8px;
+
+    font-size: 16px;
+
+    outline: none;
+}
+
+.cadastro input:focus {
+    border-color: #20232a;
+}
+
+.botaoCadastrar {
+    margin-top: 25px;
+
+    padding: 14px;
+
+    border: none;
+    border-radius: 8px;
+
+    background: #20232a;
+    color: white;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.botaoCadastrar:hover {
+    background: #343942;
+}
